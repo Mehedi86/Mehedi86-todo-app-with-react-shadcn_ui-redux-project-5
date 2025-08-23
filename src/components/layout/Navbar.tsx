@@ -1,6 +1,7 @@
 import React from 'react'
 import { RiTaskFill } from "react-icons/ri";
 import { Link } from 'react-router';
+import { ModeToggle } from '../ModeToggle';
 
 const Navbar = () => {
     return (
@@ -17,7 +18,10 @@ const Navbar = () => {
             </div>
 
             {/* right side items */}
-            <div>
+            <div className='flex gap-4 items-center'>
+                <div>
+                    <ModeToggle />
+                </div>
                 <Link to="/tasks">Login</Link>
             </div>
         </nav>
