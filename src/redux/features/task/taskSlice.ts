@@ -2,13 +2,20 @@ import type { Itask } from "@/types";
 import { createSlice } from "@reduxjs/toolkit";
 
 
-interface InitialState  {
-    task : Itask[]
+interface InitialState {
+    tasks: Itask[];
 }
 
 const initialState: InitialState = {
-    task: [
-        
+    tasks: [
+        {
+            id: 'gfkjslfd',
+            title: 'learning redux',
+            description: 'learning redux is not very hard',
+            due_date: '15/12/25',
+            isCOmpleted: false,
+            priority: 'High'
+        }
     ]
 }
 
