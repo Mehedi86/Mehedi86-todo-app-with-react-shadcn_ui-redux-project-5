@@ -1,12 +1,17 @@
+import TaskCard from '@/module/tasks/TaskCard';
 import { useAppSelector } from '@/redux/hook'
 import React from 'react'
 
 export default function Tasks() {
-  const  tasks = useAppSelector((state)=>state.todo.tasks);
+  const tasks = useAppSelector((state) => state.todo.tasks);
   console.log(tasks)
   return (
-    <div>
-        This is tasks page
+    <div className='max-w-7xl mx-auto p-4'>
+      <TaskCard />
+      <TaskCard />
+      <TaskCard />
+      <TaskCard />
+      <TaskCard />
     </div>
   )
 }
