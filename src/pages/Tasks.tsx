@@ -7,11 +7,7 @@ export default function Tasks() {
   console.log(tasks)
   return (
     <div className='max-w-7xl mx-auto p-4'>
-      <TaskCard />
-      <TaskCard />
-      <TaskCard />
-      <TaskCard />
-      <TaskCard />
+      {tasks.map((task, idx) => <TaskCard key={idx}  task={task}/>)}
     </div>
   )
 }

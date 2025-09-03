@@ -15,7 +15,33 @@ const initialState: InitialState = {
             due_date: '15/12/25',
             isCOmpleted: false,
             priority: 'High'
+        },
+        {
+            id: 'gfkjslfd',
+            title: 'learning redux with react',
+            description: 'learning redux is not very hard but we need to consistant in learning',
+            due_date: '15/12/25',
+            isCOmpleted: false,
+            priority: 'High'
+        },
+        {
+            id: 'gfkjslfd',
+            title: 'Next step learn Prisma',
+            description: 'learning redux is not very hard but we need to consistant in learning',
+            due_date: '15/12/25',
+            isCOmpleted: false,
+            priority: 'Medium'
+        },
+        {
+            id: 'gfkjslfd',
+            title: 'Next step learn Prisma',
+            description: 'learning redux is not very hard but we need to consistant in learning',
+            due_date: '15/12/25',
+            isCOmpleted: false,
+            priority: 'Low'
         }
+
+
     ]
 }
 
