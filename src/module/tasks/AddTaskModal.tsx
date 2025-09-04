@@ -10,6 +10,7 @@ import {
 } from "@/components/ui/dialog"
 import { Form, FormControl, FormField, FormItem, FormLabel } from "@/components/ui/form"
 import { Input } from "@/components/ui/input";
+import { Textarea } from "@/components/ui/textarea";
 import { useForm } from "react-hook-form"
 
 export function AddTaskMOdal() {
@@ -30,16 +31,31 @@ export function AddTaskMOdal() {
                         <DialogTitle>Add Task</DialogTitle>
                     </DialogHeader>
                     <Form {...form}>
-                        <form onSubmit={form.handleSubmit(onSubmit)}>
+                        <form className="space-y-4" onSubmit={form.handleSubmit(onSubmit)}>
+                            {/* title field */}
                             <FormField
                                 control={form.control}
                                 name="title"
                                 render={({ field }) => (
                                     <FormItem>
-                                        <FormLabel />
+                                        <FormLabel>Title</FormLabel>
                                         <FormControl>
                                             { /* Your form field */}
-                                            <Input {...field} />
+                                            <Input {...field} value={field.value || ""}/>
+                                        </FormControl>
+                                    </FormItem>
+                                )}
+                            />
+                            {/* description field */}
+                            <FormField
+                                control={form.control}
+                                name="description"
+                                render={({ field }) => (
+                                    <FormItem>
+                                        <FormLabel>Description</FormLabel>
+                                        <FormControl>
+                                            { /* Your form field */}
+                                            <Textarea {...field} value={field.value || ""}/>
                                         </FormControl>
                                     </FormItem>
                                 )}

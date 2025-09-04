@@ -12,8 +12,8 @@ export default function Tasks() {
         <h1>Tasks</h1>
         <AddTaskMOdal/>
       </div>
-      {tasks.map((task, idx) =>
-        <TaskCard key={idx}
+      {tasks.map((task) =>
+        <TaskCard key={task.id}
           task={task} />)}
     </div>
   )
