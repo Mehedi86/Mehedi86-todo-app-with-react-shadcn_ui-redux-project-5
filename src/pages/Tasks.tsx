@@ -5,7 +5,7 @@ import React from 'react'
 
 export default function Tasks() {
   const tasks = useAppSelector((state) => state.todo.tasks);
-  
+  console.log(tasks)
   return (
     <div className='max-w-7xl mx-auto p-4'>
       <div className='flex justify-between items-center'>

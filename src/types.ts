@@ -3,6 +3,6 @@ export interface Itask {
     title: string,
     description: string,
     due_date: string,
-    isCOmpleted: boolean,
-    priority: 'High' | 'Medium' | 'Low'
+    isCompleted: boolean,
+    priority: 'high' | 'medium' | 'low'
 }
