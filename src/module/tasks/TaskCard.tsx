@@ -1,10 +1,11 @@
 import { cn } from '@/lib/utils';
-import { deleteTask, toggleCompleteState, updateTask } from '@/redux/features/task/taskSlice';
+import { deleteTask, toggleCompleteState} from '@/redux/features/task/taskSlice';
 import { useAppDispatch } from '@/redux/hook';
 import type { Itask } from '@/types';
-import React from 'react'
+
 import { RiDeleteBin6Line } from "react-icons/ri";
-import { RxUpdate } from "react-icons/rx";
+
+import { UpdateTaskModal } from './UpdateTaskModal';
 
 
 interface IProps {
@@ -26,7 +27,7 @@ export default function TaskCard({ task }: IProps) {
                 </div>
                 <div className='flex items-center gap-2'>
                     {/* update button */}
-                    <button className='cursor-pointer' onClick={()=> dispatch(updateTask({id: task.id, data: {title: 'hello'}}))}><RxUpdate /></button>
+                    <UpdateTaskModal task={task} />
                     {/* delete button */}
                     <button className='cursor-pointer' onClick={() => dispatch(deleteTask(task.id))}><RiDeleteBin6Line /></button>
                     <input

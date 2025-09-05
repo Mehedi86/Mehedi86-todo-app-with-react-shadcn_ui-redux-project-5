@@ -47,8 +47,11 @@ const taskSlice = createSlice({
         deleteTask: (state, action: PayloadAction<string>) => {
             state.tasks = state.tasks.filter((task) => task.id !== action.payload)
         },
-        updateTask: (state, action: PayloadAction<{id:string, data:Itask}>) => {
+        updateTask: (state, action: PayloadAction<{id:string, data:Partial<Itask>}>) => {
             const task = state.tasks.find(task => task.id === action.payload.id);
+            if(task){
+                Object.assign(task, action.payload.data)
+            }
             
         }
     }
