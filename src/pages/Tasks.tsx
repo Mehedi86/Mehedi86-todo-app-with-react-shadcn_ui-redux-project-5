@@ -8,6 +8,7 @@ import React from 'react'
 export default function Tasks() {
   const tasks = useAppSelector(selectTask);
   const dispatch = useAppDispatch();
+  console.log(tasks)
   return (
     <div className='max-w-7xl mx-auto p-4 my-2'>
       <div className='flex justify-between items-center'>

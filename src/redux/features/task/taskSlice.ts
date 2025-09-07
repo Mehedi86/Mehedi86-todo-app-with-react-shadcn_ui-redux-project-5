@@ -1,6 +1,7 @@
 import type { RootState } from "@/redux/store";
 import type { Itask } from "@/types";
 import { createSlice, nanoid, type PayloadAction } from "@reduxjs/toolkit";
+import { deleteUser } from "../user/userSlice";
 
 
 
@@ -14,17 +15,26 @@ const initialState: InitialState = {
         {
             id: "skldjfoidswej",
             isCompleted: false,
-            title: 'osiflkwjeiy',
+            title: 'Hello1',
             description: 'sdofywpoe;weko;lskdhjpoewiuproljkwe3n',
             priority: 'medium',
             due_date: '10.6.25',
-            assingnedTo: 'Amir Hossain'
+            assingnedTo: 'jd;slksjd;flsdsd'
+        },
+        {
+            id: "skldjfoidswejsjd",
+            isCompleted: false,
+            title: 'Hello2',
+            description: 'Just for check',
+            priority: 'high',
+            due_date: '10.6.25',
+            assingnedTo: 'jd;slksjd;flsd'
         }
     ],
     filter: 'all'
 }
 
-type draftTask = Pick<Itask, "title" | "description" | "due_date" | "priority"| "assingnedTo">
+type draftTask = Pick<Itask, "title" | "description" | "due_date" | "priority" | "assingnedTo">
 
 const createTask = (taskData: draftTask): Itask => {
     return {
@@ -60,7 +70,12 @@ const taskSlice = createSlice({
         updateFilter: (state, action: PayloadAction<"all" | "low" | "medium" | "high">) => {
             state.filter = action.payload;
         }
-    }
+    },
+    extraReducers: (builder) =>{
+            builder.addCase(deleteUser, (state, action)=>{
+                state.tasks.forEach(task=> task.assingnedTo === action.payload ? (task.assingnedTo = null): task)
+            })
+        }
 })
 
 export const selectTask = (state: RootState) => {
