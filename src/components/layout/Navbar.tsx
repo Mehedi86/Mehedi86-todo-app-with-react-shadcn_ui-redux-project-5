@@ -12,9 +12,9 @@ const Navbar = () => {
                 <h1>Task Manager</h1>
             </div>
             {/* middle side nav items */}
-            <div>
+            <div className='space-x-2 font-semibold'>
                 <Link to="/tasks">Tasks</Link>
-
+                <Link to="/users">Users</Link>
             </div>
 
             {/* right side items */}

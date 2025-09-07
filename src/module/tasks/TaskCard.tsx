@@ -1,11 +1,12 @@
 import { cn } from '@/lib/utils';
 import { deleteTask, toggleCompleteState} from '@/redux/features/task/taskSlice';
-import { useAppDispatch } from '@/redux/hook';
+import { useAppDispatch, useAppSelector } from '@/redux/hook';
 import type { Itask } from '@/types';
 
 import { RiDeleteBin6Line } from "react-icons/ri";
 
 import { UpdateTaskModal } from './UpdateTaskModal';
+import { selectUsers } from '@/redux/features/user/userSlice';
 
 
 interface IProps {
@@ -13,7 +14,9 @@ interface IProps {
 }
 
 export default function TaskCard({ task }: IProps) {
-    const dispatch = useAppDispatch()
+    const dispatch = useAppDispatch();
+    const assingedUser = useAppSelector(selectUsers).find(user=> user.id === task.assingnedTo);
+    console.log(task)
     return (
         <div className='border border-neutral-600 my-2 space-y-4 px-2 '>
             <div className='flex justify-between'>
@@ -38,6 +41,7 @@ export default function TaskCard({ task }: IProps) {
                 </div>
             </div>
             <div>
+                <h2>Assigned to: {assingedUser ? assingedUser.name : "No one"}</h2>
                 <h2>{task.description}</h2>
             </div>
         </div>

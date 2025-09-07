@@ -4,7 +4,8 @@ export interface Itask {
     description: string,
     due_date: string,
     isCompleted: boolean,
-    priority: 'high' | 'medium' | 'low'
+    priority: 'high' | 'medium' | 'low',
+    assingnedTo: string | null
 }
 
 export interface IUser {

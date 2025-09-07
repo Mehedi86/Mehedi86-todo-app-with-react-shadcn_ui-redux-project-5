@@ -11,6 +11,14 @@ const initialState: InitialState = {
         {
             id: 'jd;slksjd;flsd',
             name: 'Faysal Hossain'
+        },
+        {
+            id: 'jd;slksjd;flsdsd',
+            name: 'Amir Hossain'
+        },
+        {
+            id: 'jd;slksjd;flsdesds',
+            name: 'Iqbal Hossain'
         }
     ]
 }

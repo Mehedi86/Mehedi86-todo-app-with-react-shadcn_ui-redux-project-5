@@ -17,19 +17,21 @@ const initialState: InitialState = {
             title: 'osiflkwjeiy',
             description: 'sdofywpoe;weko;lskdhjpoewiuproljkwe3n',
             priority: 'medium',
-            due_date: '10.6.25'
+            due_date: '10.6.25',
+            assingnedTo: 'Amir Hossain'
         }
     ],
     filter: 'all'
 }
 
-type draftTask = Pick<Itask, "title" | "description" | "due_date" | "priority">
+type draftTask = Pick<Itask, "title" | "description" | "due_date" | "priority"| "assingnedTo">
 
 const createTask = (taskData: draftTask): Itask => {
     return {
+        ...taskData,
         id: nanoid(),
         isCompleted: false,
-        ...taskData
+        assingnedTo: taskData.assingnedTo ? taskData.assingnedTo : null
     }
 }
 
